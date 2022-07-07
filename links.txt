@@ -1,2 +1,4 @@
 1. https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9133368
 2. https://github.com/moamirian/CNN_RBFs
+3. https://towardsdatascience.com/building-convolutional-neural-network-using-numpy-from-scratch-b30aac50e50a
+4. https://towardsdatascience.com/training-a-convolutional-neural-network-from-scratch-2235c2a25754

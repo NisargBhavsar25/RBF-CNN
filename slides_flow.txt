@@ -1,0 +1,9 @@
+1. What is an RBF?
+2. What is a CNN?
+3. Why combine both?
+4. How to combine?
+5. Complete Architecture
+6. Training process
+7. Implementation
+8. Drawbacks of the Model
+9. Conclusion

@@ -1,7 +1,8 @@
 import numpy as np
+from layer import Layer
 
-class MaxPool2:
-  # A Max Pooling layer using a pool size of 2.
+
+class Maxpooling(Layer):
 
   def iterate_regions(self, image):
     '''
@@ -33,7 +34,7 @@ class MaxPool2:
 
     return output
 
-  def backprop(self, d_L_d_out):
+  def backward(self, d_L_d_out, learning_rate):
     '''
     Performs a backward pass of the maxpool layer.
     Returns the loss gradient for this layer's inputs.

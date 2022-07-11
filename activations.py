@@ -29,7 +29,7 @@ class ReLu(Activation):
             return x if x > 0 else 0
 
         def relu_prime(x):
-            return relu(x)
+            return 1 if x > 0 else 0
 
         super().__init__(relu, relu_prime)
 

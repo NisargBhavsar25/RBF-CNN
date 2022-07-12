@@ -5,9 +5,9 @@ from keras.utils import np_utils
 from dense import Dense
 from convolutional import Convolutional
 from maxpool import Maxpooling
-# from rbf import RBF
+from rbf import RBF
 from reshape import Reshape
-from activations import ReLu, Softmax
+from activations import ReLu, Softmax, H
 from losses import binary_cross_entropy, binary_cross_entropy_prime
 from network import train, predict
 
@@ -43,9 +43,10 @@ network = [
     Maxpooling(),
     ReLu(),
     Reshape((256, 26, 26), (256 * 26 * 26, 1)),
-    Dense(256 * 26 * 26, 20),
-    # RBF(),
-    Dense(20, 10),
+    Dense(256 * 26 * 26, 10),
+    RBF(10, 10),
+    H(),
+    Dense(10, 10),
     Softmax(),
 ]
 

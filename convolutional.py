@@ -16,9 +16,11 @@ class Convolutional(Layer):
     def forward(self, input):
         self.input = input
         self.output = np.copy(self.biases)
+        print(self.output[0])
+        # exit(0)
         for i in range(self.depth):
             for j in range(self.input_depth):
-                self.output[i] += signal.correlate2d(self.input[j], self.kernels[i, j], "valid")
+                self.output[i] = self.output[i] + signal.correlate2d(self.input[j], self.kernels[i][j], "valid")
         return self.output
 
     def backward(self, output_gradient, learning_rate):

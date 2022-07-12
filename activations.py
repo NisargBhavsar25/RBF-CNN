@@ -1,6 +1,4 @@
 import numpy as np
-from sqlalchemy import outparam
-from layer import Layer
 from activation import Activation
 
 class Tanh(Activation):

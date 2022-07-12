@@ -42,9 +42,9 @@ network = [
     Maxpooling(),
     ReLu(),
     Reshape((256, 26, 26), (256 * 26 * 26, 1)),
-    Dense(256 * 26 * 26, 20),
+    Dense(256 * 26 * 26, 10),
     ReLu(),
-    Dense(20, 10),
+    Dense(10, 10),
     Softmax(),
 ]
 

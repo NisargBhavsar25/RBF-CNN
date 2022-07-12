@@ -16,7 +16,7 @@ def preprocess_data(x, y, limit):
     all_indices = np.hstack((zero_index, one_index))
     all_indices = np.random.permutation(all_indices)
     x, y = x[all_indices], y[all_indices]
-    x = x.reshape(len(x), 1, 224, 224)
+    x = x.reshape(len(x), 1, 28, 28)
     x = x.astype("float32") / 255
     y = np_utils.to_categorical(y)
     y = y.reshape(len(y), 2, 1)
@@ -29,20 +29,17 @@ x_test, y_test = preprocess_data(x_test, y_test, 100)
 
 # neural network
 network = [
-    Convolutional((1, 224, 224), 3, 16),
+    Convolutional((1, 28, 28), 3, 16),
     Maxpooling(),
     ReLu(),
-    Convolutional((1, 111, 111), 3, 32),
+    Convolutional((1, 13, 13), 3, 16),
     Maxpooling(),
     ReLu(),
-    Convolutional((1, 54, 54), 3, 128),
+    Convolutional((1, 5, 5), 3, 8),
     Maxpooling(),
     ReLu(),
-    Convolutional((1, 26, 26), 3, 256),
-    Maxpooling(),
-    ReLu(),
-    Reshape((256, 26, 26), (256 * 26 * 26, 1)),
-    Dense(256 * 26 * 26, 10),
+    Reshape((256, 5, 5), (256 * 5 * 5, 1)),
+    Dense(256 * 5 * 5, 10),
     ReLu(),
     Dense(10, 10),
     Softmax(),

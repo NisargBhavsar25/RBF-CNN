@@ -2,10 +2,10 @@ import numpy as np
 from layer import Layer
 
 class RBF(Layer):
-    def __init__(self, input_size, output_size, centers):
+    def __init__(self, input_size, output_size):
         self.weights = np.random.randn(output_size, input_size)
         self.bias = np.random.randn(output_size, 1)
-        self.centers = centers
+        self.centers = np.random.randn(output_size, 1)
 
     def forward(self, input):
         self.input = input

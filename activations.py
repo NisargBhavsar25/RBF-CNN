@@ -1,4 +1,5 @@
 import numpy as np
+from sqlalchemy import outparam
 from layer import Layer
 from activation import Activation
 
@@ -26,14 +27,19 @@ class Sigmoid(Activation):
 class ReLu(Activation):
     def __init__(self):
         def relu(x):
-            return x if x > 0 else 0
-
+            opt=[]
+            for element in x:
+                opt.append(element if element.any() > 0 else 0)
+            return np.array(opt).resize(x.shape)
         def relu_prime(x):
-            return 1 if x > 0 else 0
+            opt=[]
+            for element in x:
+                opt.append(1 if element.any() > 0 else 0)
+            return np.array(opt).resize(x.shape)
 
         super().__init__(relu, relu_prime)
 
-class Softmax(Layer):
+class Softmax(Activation):
     def __init__(self):
         def softmax(x):
             e_x = np.exp(x - np.max(x))
@@ -46,7 +52,7 @@ class Softmax(Layer):
         super().__init__(softmax, softmax_prime)
         
 
-class H(Layer):
+class H(Activation):
     def __init__(self):
         def h(x):
             return (1 - np.pow(x, 2))

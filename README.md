@@ -1,4 +1,4 @@
-# <span style="color: #286feb">Combining Radial Basis Function Networks with Convolutional Neural Networks</span>
+# <span style="color: red">Combining Radial Basis Function Networks with Convolutional Neural Networks</span>
 
 <img src="network.png" alt="rbf-cnn model">
 
@@ -18,9 +18,16 @@ Here in this artcile we will trying to combine both of these network architectur
 7. **[References](#references)**
 
 <div id="rbf"></div>
+
 ## What is a RBF?
 
-RBFs are matheatically defined as a global approximation method of a mapping $F$ from a $d$ dimensional feature space to a $K$ dimensional label space $(F:~IR^d\rightarrow IR^K)$<sup>[[1]](#references)</sup>. Or simply but a machine learning tool to categorise multi dimensional data into classes. 
+RBFs are matheatically defined as a global approximation method of a mapping $F$ from a $d$ dimensional feature space to a $K$ dimensional label space $(F:~IR^d\rightarrow IR^K)$<sup>[[1]](#references)</sup>. Or simply put, it is an unsupervised machine learning tool used to categorise multi dimensional data into different classes.
+
+The RBF architecture consists of an input layer, a hidden layer conatining cluster centers $(c_j)$ and an output layer. The cluster centers are seperately learned generally by using the KNN algorithm.
+
+<div style="text-align: center"><img src="rbf.png" alt="rbf" width=45% align></div>
+
+
 
 ## References:
 

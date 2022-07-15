@@ -2,9 +2,9 @@
 
 <img src="network.png" alt="rbf-cnn model">
 
-Prior to the advent of Convolutional Neural Networks (CNNs), Radial Basis Function Neural Networks (RBFs) were much popular in the fields of image recognision and computer vision. But RBFs' lack of adapblity with modern architecture has prevented their integration with the deep learning computer vision research.
+Before the advent of Convolutional Neural Networks (CNNs), Radial Basis Function Neural Networks (RBFs) were popular in image recognition and computer vision. However, RBFs’ lack of adaptability to modern architecture has prevented their integration with deep learning computer vision research.
 
-Here in this artcile we will trying to combine both of these network architectures to develop something, that gives us the best of both worlds!
+Here in this article, we will try to combine these network architectures to develop something that gives us the best of both worlds!
 
 
 ## Table of Contents:
@@ -18,15 +18,15 @@ Here in this artcile we will trying to combine both of these network architectur
 
 <div id="rbf"></div>
 
-## What is a RBF?
+## What is an RBF?
 
-RBFs are matheatically defined as a global approximation method of a mapping $F$ from a $d$ dimensional feature space to a $K$ dimensional label space $(F:~IR^d\rightarrow IR^K)$<sup>[[1]](#references)</sup>. Or simply put, it is an unsupervised machine learning tool used to categorise multi dimensional data into different classes.
+RBFs are mathematically defined as a global approximation method of a mapping $F$ from a $d$ dimensional feature space to a $K$ dimensional label space $(F:~IR^d\rightarrow IR^K)$<sup>[[1]](#references)</sup>. In simpler words, it is an unsupervised machine learning tool that categorizes multi-dimensional data into different classes.
 
-The RBF architecture consists of an input layer, a hidden layer conatining cluster centers $(c_j)$ and an output layer. The cluster centers are seperately learned, generally by using the KNN algorithm.
+The RBF architecture consists of an input layer, a hidden layer containing cluster centers $(c_j)$, and an output layer. The cluster centers are separately learned, generally by using the KNN algorithm.
 
 <div style="text-align: center"><img src="rbf.png" alt="rbf" width=45% align></div>
 
-During the evaluation, or also known as inference, distance is calculated between the input and the cluster centers and an activation function is applied on the obtained distance. Mathematically:
+During the evaluation, also known as inference, distance is calculated between the input and the cluster centers, and an activation function is applied to the obtained distance. Mathematically:
 
 $$
 \begin{align}
@@ -50,11 +50,11 @@ h(r)&=\frac{1}{1+r^2/\sigma^2}
 \end{align}
 $$
 
-The training of these networks can be summarised in 3 steps<sup>[[3]](#references)</sup>:
+We can summarise the training of these networks in 3 steps<sup>[[3]](#references)</sup>:
 
 * ***(a) Unsupervised Learning:***
 
-    This step is aimed at finding cluster centers that are representative of the data. The k-means clustering algorithm is widely used for this purpose. k-means iteratively finds a set of cluster centers and minimizes the overall distance between cluster centers and members over the entire dataset. The target of the k-means algorithm can be written in the following form:
+    This step aims to find cluster centers representative of the data. The k-means clustering algorithm is widely used for this purpose. k-means iteratively finds a set of cluster centers and minimizes the overall distance between cluster centers and members over the entire dataset. The target of the k-means algorithm can be written in the following form:
 
     $$
     \begin{align}
@@ -90,7 +90,9 @@ The training of these networks can be summarised in 3 steps<sup>[[3]](#reference
     \end{align}
     $$
 
+* ***(c) End-to-End Optimization:***
 
+     After initializing the RBF weights and cluster centers with clustering algorithms such as k-means, optimizing the network end-to-end via backpropagation and gradient descent is possible. 
 
 
 

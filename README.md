@@ -1,7 +1,6 @@
 # <span style="color: #286feb">Combining Radial Basis Function Networks with Convolutional Neural Networks</span>
 
-<img src="cnn.jpg" alt="rbf-cnn model" width=60%>
-<img src="rbf.jpg" alt="rbf-cnn model" width=35%>
+<img src="network.png" alt="rbf-cnn model">
 
 Prior to the advent of Convolutional Neural Networks (CNNs), Radial Basis Function Neural Networks (RBFs) were much popular in the fields of image recognision and computer vision. But RBFs' lack of adapblity with modern architecture has prevented their integration with the deep learning computer vision research.
 

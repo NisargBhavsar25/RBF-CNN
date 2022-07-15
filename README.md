@@ -52,7 +52,46 @@ $$
 
 The training of these networks can be summarised in 3 steps<sup>[[3]](#references)</sup>:
 
-* (a) 
+* ***(a) Unsupervised Learning:***
+
+    This step is aimed at finding cluster centers that are representative of the data. The k-means clustering algorithm is widely used for this purpose. k-means iteratively finds a set of cluster centers and minimizes the overall distance between cluster centers and members over the entire dataset. The target of the k-means algorithm can be written in the following form:
+
+    $$
+    \begin{align}
+    \text{Loss}_{unsupervised} = \sum^K_{j=1}\sum_{x^\mu \in v_j}||x^\mu -c_j||^2
+    \end{align}
+    $$
+
+    Where $x^\mu \in v_j$ denotes the members of the $j^{th}$ cluster shown by $v_j$.
+
+* ***(b) Computing Weights:***
+
+    The output weights of an RBF network can be computed using a closed-form solution. The matrix of activation of the samples is defined from the training set $(H)$ as follows:
+
+    $$
+    \begin{align}
+    H = h(||x^\mu -c_j||^2_{R_j})_{\mu=1,...,M,~j=1,...,C}
+    \end{align}
+    $$
+
+    Based on equation $(2)$, the matrix of output weights $(W)$, which estimates the matrix of labels $(Y)$, is computed by the following equation:
+
+    $$
+    \begin{align}
+    Y \approx MW \implies W \approx M^\dagger Y
+    \end{align}
+    $$
+
+    Where $M^\dagger$ is the Moore-Penrose pseudo-inverse matrix of $H$ and is computed as:
+
+    $$
+    \begin{align}
+    H^\dagger = \lim_{\alpha\rightarrow0^+}(H^TH+\alpha I)^{-1}H^T
+    \end{align}
+    $$
+
+
+
 
 
 ## References:

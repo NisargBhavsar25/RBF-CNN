@@ -1,6 +1,6 @@
 # <span style="color: red">Combining Radial Basis Function Networks with Convolutional Neural Networks</span>
 
-<img src="network.png" alt="rbf-cnn model">
+<img src="https://raw.githubusercontent.com/NisargBhavsar25/RBF-CNN/main/network.png" alt="rbf-cnn model">
 
 Before the advent of Convolutional Neural Networks (CNNs), Radial Basis Function Neural Networks (RBFs) were popular in image recognition and computer vision tasks. However, RBFs’ lack of adaptability to modern architecture has prevented their integration with deep learning computer vision research.
 
@@ -24,7 +24,7 @@ RBFs are mathematically defined as a global approximation method of a mapping $F
 
 The RBF architecture consists of an input layer, a hidden layer containing cluster centres $(c_j)$, and an output layer. The cluster centres are separately learned, generally by using the KNN algorithm.
 
-<div style="text-align: center"><img src="rbf.png" alt="rbf" width=45% align></div>
+<div style="text-align: center"><img src="https://raw.githubusercontent.com/NisargBhavsar25/RBF-CNN/main/rbf.png" alt="rbf" width=45% align></div>
 
 During the evaluation, also known as inference, distance is calculated between the input and the cluster centres, and an activation function is applied to the obtained distance. Mathematically:
 
@@ -160,7 +160,7 @@ The problems mentioned above can be solved in the following ways:
 
     Where $\sigma$ is the parameter that determines the width of the kernel. The activation kernel can be visually compared with standard kernels in the following image.
 
-    <img src="activation.png" alt="activation functions">
+    <img src="https://raw.githubusercontent.com/NisargBhavsar25/RBF-CNN/main/activation.png" alt="activation functions">
 
     The proposed quadratic kernel reduces the non-linearity of the CNN-RBF computational graph for backpropagation.
 
@@ -174,7 +174,7 @@ The combination model of an RBF and a CNN is quite powerful. Even if it does not
 
 The above-described model was tested<sup>[[4]](#references)</sup> on various standard image classification datasets to get the following results.
 
-<img src="results.png" alt="rbf-cnn performance" width=80%>
+<img src="https://raw.githubusercontent.com/NisargBhavsar25/RBF-CNN/main/results.png" alt="rbf-cnn performance" width=80%>
 
 <div id="references"></div>
 
